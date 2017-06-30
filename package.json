@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/poc-cookies/docker-web/issues"
   },
-  "homepage": "https://github.com/poc-cookies/docker-web#readme"
+  "homepage": "https://github.com/poc-cookies/docker-web#readme",
+  "dependencies": {
+    "node-static": "^0.7.9"
+  }
 }

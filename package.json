@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/poc-cookies/docker-web#readme",
   "dependencies": {
-    "node-static": "^0.7.9"
+    "node-static": "^0.7.9",
+    "whatwg-fetch": "^2.0.3"
   }
 }

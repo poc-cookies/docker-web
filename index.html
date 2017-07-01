@@ -3,6 +3,28 @@
     <title>Docker Web</title>
   </head>
   <body>
-    <p>Hello Docker Web!</p>
+
+    <h3>Request: GET /api/items (text data)</h3>
+    <p id="get-api-items"></p>
+    <hr>
+
+    <h3>Request: GET /api/items/{id} (text data)</h3>
+    <p id="get-api-items-id"></p>
+    <hr>
+
+    <h3>Request: POST /api/items (text data)</h3>
+    <p id="post-api-items"></p>
+    <hr>
+
+    <h3>Request: PUT /api/items/{id} (text data)</h3>
+    <p id="put-api-items"></p>
+    <hr>
+
+    <h3>Request: DELETE /api/items/{id} (text data)</h3>
+    <p id="delete-api-items"></p>
+    <hr>
+
+    <script src="node_modules/whatwg-fetch/fetch.js"></script>
+    <script src="client.js"></script>
   </body>
 </html>

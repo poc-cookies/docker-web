@@ -57,3 +57,5 @@ typings/
 # dotenv environment variables file
 .env
 
+# Environment variables script
+env.js

@@ -1,7 +1,5 @@
-const scheme = 'http://'
-const hostname = 'localhost';
-const port = '8000';
-const baseApi = scheme + hostname + ':' + port + '/api';
+const API_BASE_URL = ENV.API_BASE_URL;
+const WEB_SOCKET_URL = ENV.WEB_SOCKET_URL;
 
 const innerTextSetter = (elementId, text) => {
   let el = document.getElementById(elementId);
@@ -13,21 +11,21 @@ const defaultErrorHandler = (err) => {
 };
 
 // GET /api/items
-fetch(baseApi + '/items').then((response) => {
+fetch(API_BASE_URL + '/items').then((response) => {
   return response.json();
 }).then((json) => {
   innerTextSetter('get-api-items', JSON.stringify(json, null, 2));
 }).catch(defaultErrorHandler);
 
 // GET /api/items/{id}
-fetch(baseApi + '/items/1').then((response) => {
+fetch(API_BASE_URL + '/items/1').then((response) => {
   return response.json();
 }).then((json) => {
   innerTextSetter('get-api-items-id', JSON.stringify(json, null, 2));
 }).catch(defaultErrorHandler);
 
 // POST /api/items
-fetch(baseApi + '/items', {
+fetch(API_BASE_URL + '/items', {
   method: 'POST'
 }).then((response) => {
   return response.text();
@@ -36,7 +34,7 @@ fetch(baseApi + '/items', {
 }).catch(defaultErrorHandler);
 
 // PUT /api/items/{id}
-fetch(baseApi + '/items/123', {
+fetch(API_BASE_URL + '/items/123', {
   method: 'PUT'
 }).then((response) => {
   return response.text();
@@ -45,7 +43,7 @@ fetch(baseApi + '/items/123', {
 }).catch(defaultErrorHandler);
 
 // DELETE /api/items/{id}
-fetch(baseApi + '/items/99', {
+fetch(API_BASE_URL + '/items/99', {
   method: 'DELETE'
 }).then((response) => {
   return response.text();
@@ -55,7 +53,7 @@ fetch(baseApi + '/items/99', {
 
 
 // WebSocket connection
-const ws = new WebSocket('ws://localhost:8001');
+const ws = new WebSocket(WEB_SOCKET_URL);
 
 document.forms.publish.onsubmit = function () {
   let outMsg = this.message.value;
